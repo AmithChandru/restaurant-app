@@ -1,0 +1,36 @@
+.header {
+  background-color: #80471c;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headerName {
+  font-size: 32px;
+  color: white;
+}
+
+.cart {
+  background-color: #2e1503;
+  color: white;
+  flex-direction: row;
+  display: flex;
+  width: 15vw;
+  height: 70%;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cartItems {
+  background-color: #80471c;
+  height: 60%;
+  width: 20%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
