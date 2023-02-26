@@ -1,8 +1,31 @@
 import './Styles/home.css';
 
 function App() {
+
+  const items = [
+    {
+      name: 'Sushi',
+      description: 'Finest fish and veggies',
+      price: '22.99'
+    },
+    {
+      name: 'Schnitzel',
+      description: 'A German speciality!',
+      price: '16.50'
+    },
+    {
+      name: 'Barbecue Burger',
+      description: 'American, raw, meaty',
+      price: '12.99'
+    },
+    {
+      name: 'Green Bowl',
+      description: 'Healthy... and green...',
+      price: '22.99'
+    },
+  ]
   return (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <div className='header'>
         <span className='headerName'>ReactMeals</span>
         <div className='cart'>
@@ -17,6 +40,18 @@ function App() {
         <p>Choose your favorite meal from our broad sections of available meals and enjoy a delicious lunch or dinner at home.</p>
         <p>All our meals are cooked with high-quality ingredients, just-in-time and of course by experienced chefs!</p>
       </section>
+      <div className='foodList'>
+        {items.map((item) => {
+          return (
+            <ul style={{listStyleType: 'none'}}>
+              <li style={{fontWeight: 'bold'}}>{item.name}</li>
+              <li style={{fontStyle: 'italic'}}>{item.description}</li>
+              <li style={{color: 'red'}}>{item.price}</li>
+              <hr/>
+            </ul>
+          )
+        })}
+      </div>
     </div>
   );
 }
