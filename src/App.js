@@ -1,3 +1,4 @@
+import Cart from './Components/Cart';
 import './Styles/home.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   ]
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Cart />
       <div className='header'>
         <span className='headerName'>ReactMeals</span>
         <div className='cart'>
