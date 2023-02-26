@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import Cart from './Components/Cart';
 import './Styles/home.css';
 
 function App() {
+
+  const [cartClicked, setCartClicked] = useState(false);
+
+  const handleClose = () => {
+    setCartClicked(false);
+  }
 
   const items = [
     {
@@ -27,10 +34,10 @@ function App() {
   ]
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <Cart />
+      {cartClicked && <Cart handleClose={handleClose}/>}
       <div className='header'>
         <span className='headerName'>ReactMeals</span>
-        <div className='cart'>
+        <div className='cart' onClick={() => setCartClicked(true)} style={{cursor: 'pointer'}}>
           <span>Your cart</span>
           <div className='cartItems'>
             <span>0</span>

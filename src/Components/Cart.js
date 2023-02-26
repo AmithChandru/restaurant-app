@@ -25,7 +25,7 @@ const Cart = (props) => {
         <span>25.98</span>
       </div>
       <div className="actions">
-        <button className="button-alt">Close</button>
+        <button className="button-alt" onClick={props.handleClose}>Close</button>
         <button className="button">Order</button>
       </div>
     </Modal>
