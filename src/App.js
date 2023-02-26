@@ -43,12 +43,20 @@ function App() {
       <div className='foodList'>
         {items.map((item) => {
           return (
-            <ul style={{listStyleType: 'none'}}>
-              <li style={{fontWeight: 'bold'}}>{item.name}</li>
-              <li style={{fontStyle: 'italic'}}>{item.description}</li>
-              <li style={{color: 'red'}}>{item.price}</li>
-              <hr/>
-            </ul>
+            <div style={{flexDirection: 'row', display: 'flex', justifyContent: 'space-between'}}>
+              <ul style={{listStyleType: 'none'}}>
+                <li style={{fontWeight: 'bold'}}>{item.name}</li>
+                <li style={{fontStyle: 'italic'}}>{item.description}</li>
+                <li style={{color: 'red'}}>{item.price}</li>
+              </ul>
+              <form style={{flexDirection: 'column', display: 'flex', alignItems: 'center'}}>
+                <div style={{marginBottom: '10px'}}>
+                  <label style={{fontWeight: 'bold'}}>Amount</label>
+                  <input type='text' style={{width: '40px', marginLeft: '20px'}}/>
+                </div>
+                <input type='button' value='+Add' style={{backgroundColor: '#80471c', color: 'white', borderRadius: '20px', width: '80%'}}/>
+              </form>
+            </div>
           )
         })}
       </div>
