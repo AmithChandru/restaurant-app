@@ -37,9 +37,8 @@ const FoodList = (props) => {
     let item = items.filter((ele) => {
       return ele.id === id;
     })
-    item[0].amount = quantity;
+    cartCtx.addAmount(id, quantity);
     cartCtx.addItem(item);
-    console.log(cartCtx.items);
   }
 
   return (
@@ -57,7 +56,7 @@ const FoodList = (props) => {
                 <label style={{ fontWeight: 'bold' }}>Amount</label>
                 <input type='number' style={{ width: '40px', marginLeft: '20px' }} onChange={(e) => setQuantity(e.target.value)} />
               </div>
-              <input onClick={() => handleAdd(item.id)} type='button' value='+Add' style={{ backgroundColor: '#80471c', color: 'white', borderRadius: '20px', width: '80%' }} />
+              <input onClick={() => handleAdd(item.id)} type='button' value='+Add' style={{ backgroundColor: '#80471c', color: 'white', borderRadius: '20px', width: '80%', cursor: 'pointer' }} />
             </form>
           </div>
         )

@@ -1,9 +1,16 @@
+import { useState } from "react";
 import cartContext from "./cartContext";
 
 const CartProvider = (props) => {
 
+  const [items, setItems] = useState([]);
+  const [amount, setAmount] = useState(new Map());
+
   const addItemHandler = (item) => {
-    CartContext.items.push(item);
+    setItems((state) => [
+      ...state,
+      item
+    ])
   }
 
   const removeItemHandler = (id) => {
@@ -12,11 +19,27 @@ const CartProvider = (props) => {
     })
   }
 
+  const addAmountHandler = (id, amount) => {
+    setAmount((state) => ({
+      ...state,
+      [id]: amount
+    }))
+  }
+
+  const decreaseAmountHandler = (id, amount) => {
+    setAmount((state) => ({
+      ...state,
+      [id]: amount
+    }))
+  }
+
   const CartContext = {
-    items: [],
-    amount: 0,
+    items: items,
+    amount: amount,
     addItem: addItemHandler,
-    removeItem: removeItemHandler
+    removeItem: removeItemHandler,
+    addAmount: addAmountHandler,
+    decreaseAmount: decreaseAmountHandler
   }
 
   return (
